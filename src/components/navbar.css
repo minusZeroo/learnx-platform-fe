@@ -1,0 +1,35 @@
+/* navbar.css */
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+a, button {
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+a:hover, button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    outline: none;
+}

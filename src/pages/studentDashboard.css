@@ -1,0 +1,53 @@
+/* studentDashboard.css */
+
+.dashboard-container {
+    margin: 50px auto; /* Add space between the top of the container and the navbar */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 4rem;
+}
+
+.dashboard-container h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.dashboard-container h3 {
+    margin-bottom: 10px;
+}
+
+.dashboard-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Change to flex display */
+    flex-wrap: wrap; /* Wrap items to next line if needed */
+    justify-content: center; /* Center the items horizontally */
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.dashboard-container ul li {
+    margin-right: 10px; /* Add margin between items */
+}
+
+.dashboard-container ul li a {
+    display: block;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    width: calc(33.33% - 10px);
+    padding: 4rem;/* Calculate width to fit three items in a row with margin */
+}
+
+.dashboard-container ul li a:hover {
+    background-color: #0056b3;
+}
