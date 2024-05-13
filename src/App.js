@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import StudentDashboard from "./pages/StudentDashboard";
 import Register from "./components/Register";
 import Login from "./components/Login";
-// import './App.css'
 
 
 const App = () => {
@@ -16,9 +15,7 @@ const App = () => {
                   <Route path="/register" element={<Register />} />
                   <Route path="/studentdashboard" element={<StudentDashboard />} />
               </Routes>
-
           </div>
-
       </Router>
   );
 };
