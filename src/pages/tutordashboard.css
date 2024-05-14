@@ -1,0 +1,142 @@
+.tutor-dashboard {
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 4rem;
+}
+
+.tutor-dashboard h2 {
+    text-align: center;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 for availability section, 1/3 for tutorial requests section */
+    gap: 20px;
+}
+
+.availability-section {
+    padding: 20px;
+}
+
+.availability-section h3 {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-group input[type="time"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px 20px;
+    margin-top: 2rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.response-buttons button{
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    font-size: small;
+}
+
+.response-buttons button:hover{
+    background-color: #0056b3;
+}
+
+.tutorial-requests-section {
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.booked-tutorials-section{
+    padding: 20px;
+    padding-top: 0;
+    margin-top: 3rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-header h4 {
+    margin: 0;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.status {
+    margin: 0;
+}
+
+.availabilities-section{
+    margin-top: 4rem;
+}
+
+.availabilities-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.availabilities-section th,
+.availabilities-section td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.availabilities-section th {
+    background-color: #f2f2f2;
+}
+
+.availabilities-section tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+

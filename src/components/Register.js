@@ -5,7 +5,7 @@ import './form.css';
 
 const Register = () => {
     const [formData, setFormData] = useState({
-        username: '',
+        studentNumber: '',
         password: '',
         role: 'STUDENT' // Set default role to STUDENT
     });
@@ -37,8 +37,8 @@ const Register = () => {
                     <div>
                         <input
                             type="text"
-                            name="username"
-                            value={formData.username}
+                            name="studentNumber"
+                            value={formData.studentNumber}
                             onChange={handleChange}
                             placeholder="Student Number"
                             required

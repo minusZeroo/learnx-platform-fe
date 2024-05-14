@@ -5,7 +5,7 @@ import './form.css';
 
 const Login = () => {
     const [formData, setFormData] = useState({
-        username: '',
+        studentNumber: '',
         password: ''
     });
     const [loginSuccess, setLoginSuccess] = useState(false);
@@ -48,8 +48,8 @@ const Login = () => {
                     <div>
                         <input
                             type="text"
-                            name="username"
-                            value={formData.username}
+                            name="studentNumber"
+                            value={formData.studentNumber}
                             onChange={handleChange}
                             placeholder="Student Number"
                             required
