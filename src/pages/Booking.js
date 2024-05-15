@@ -59,4 +59,36 @@ const Booking = () => {
     const handleFeedbackChange = (e) => {
         setFeedbackFormData({ ...feedbackFormData, [e.target.name]: e.target.value });
     };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const selectedAvailability = availabilities.find(
+            (availability) => availability.id === parseInt(formData.selectedAvailabilityId)
+        );
+        const studentId = JSON.parse(localStorage.getItem('user')).userId;
+        const requestData = {
+            ...formData,
+            dayOfWeek: selectedAvailability.dayOfWeek,
+            startTime: selectedAvailability.startTime,
+            endTime: selectedAvailability.endTime,
+            tutorId: selectedAvailability.tutor.id,
+            studentId: studentId
+        };
+        try {
+            const response = await axios.post('http://localhost:8080/api/tutorial-requests', requestData);
+            setMessage('Tutorial request submitted successfully!');
+            console.log(response.data);
+            // Clear the booking form after successful submission
+            setFormData({
+                selectedDate: '',
+                selectedAvailabilityId: '',
+                subject: ''
+            });
+            fetchTutorialRequests();
+            fetchBookedTutorials();
+        } catch (error) {
+            console.error('Error submitting tutorial request:', error);
+            setMessage('Error submitting tutorial request. Please try again.');
+        }
+    };
 }
