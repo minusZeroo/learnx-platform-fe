@@ -91,4 +91,32 @@ const Booking = () => {
             setMessage('Error submitting tutorial request. Please try again.');
         }
     };
+
+    const filteredAvailabilities = availabilities.filter(
+        (availability) => availability.dayOfWeek === formData.selectedDate && availability.subject === formData.subject
+    );
+
+    const handleFeedbackSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            // Send feedback data to the backend
+            // You need to implement the API endpoint to handle feedback submission
+            // Example:
+            // await axios.post('http://localhost:8080/api/session-feedbacks', feedbackFormData);
+            console.log('Feedback submitted:', feedbackFormData);
+            // Clear the feedback form after submission
+            setFeedbackFormData({
+                sessionId: '',
+                rating: '', // Resetting the rating field
+                comments: '' // Resetting the comments field
+                // Add more fields for feedback
+            });
+        } catch (error) {
+            console.error('Error submitting feedback:', error);
+        }
+    };
+
+
+
+
 }
