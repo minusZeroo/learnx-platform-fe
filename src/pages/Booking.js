@@ -51,4 +51,12 @@ const Booking = () => {
             console.error('Error fetching booked tutorials:', error);
         }
     };
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value});
+    };
+
+    const handleFeedbackChange = (e) => {
+        setFeedbackFormData({ ...feedbackFormData, [e.target.name]: e.target.value });
+    };
 }
