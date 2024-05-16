@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './admindashboard.css'; // Import the CSS file
 
 const AdminDashboard = () => {
     const [altTutorialRequests, setAltTutorialRequests] = useState([]);
@@ -101,6 +101,114 @@ const AdminDashboard = () => {
         }
     };
 
-
-
+    return (
+        <div className='admin-dashboard'>
+            <h2 className='title'>Admin Dashboard</h2>
+            <div>
+                <h3 className='sub-title'>Tutorial Requests with Status "ALT"</h3>
+                {loading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
+                {altTutorialRequests.length > 0 ? (
+                    <div className="tutorial-request-cards">
+                        {altTutorialRequests.map((request) => (
+                            <div className="card" key={request.id}>
+                                <div className="card-header">
+                                    <h4>Request ID: {request.id}</h4>
+                                    <p className="status">Status: {request.status}</p>
+                                </div>
+                                <div className="card-body">
+                                    <p>Student: {request.student.username}</p>
+                                    <p>Student: {request.tutor.username}</p>
+                                    <p>Subject: {request.subject}</p>
+                                    <p>Day of the Week: {request.dayOfWeek}</p>
+                                    <p>Time: {request.startTime} - {request.endTime}</p>
+                                    <div className="response-buttons">
+                                        <button onClick={() => handleResponseStatus(request.id, 'YES')}>YES</button>
+                                        <button onClick={() => handleResponseStatus(request.id, 'NO')}>NO</button>
+                                        <button onClick={() => handleDeleteRequest(request.id)}>Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p>No tutorial requests with status "ALT" found.</p>
+                )}
+            </div>
+            <div>
+                <h3 className='sub-title'>All Tutorial Bookings</h3>
+                {loading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
+                {tutorialBookings.length > 0 ? (
+                    <table className="data-table">
+                        <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Student</th>
+                            <th>Tutor</th>
+                            <th>Subject</th>
+                            <th>Day of the Week</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {tutorialBookings.map((booking) => (
+                            <tr key={booking.id}>
+                                <td>{booking.id}</td>
+                                <td>{booking.student.username}</td>
+                                <td>{booking.tutor.username}</td>
+                                <td>{booking.subject}</td>
+                                <td>{booking.dayOfWeek}</td>
+                                <td>{booking.startTime} - {booking.endTime}</td>
+                                <td>
+                                    <button onClick={() => handleDeleteBooking(booking.id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No tutorial bookings found.</p>
+                )}
+            </div>
+            <div>
+                <h3 className='sub-title'>All Tutor Availabilities</h3>
+                {loading && <p>Loading...</p>}
+                {error && <p>{error}</p>}
+                {tutorAvailabilities.length > 0 ? (
+                    <table className="data-table">
+                        <thead>
+                        <tr>
+                            <th>Availability ID</th>
+                            <th>Tutor</th>
+                            <th>Subject</th>
+                            <th>Day of the Week</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {tutorAvailabilities.map((availability) => (
+                            <tr key={availability.id}>
+                                <td>{availability.id}</td>
+                                <td>{availability.tutor.username}</td>
+                                <td>{availability.subject}</td>
+                                <td>{availability.dayOfWeek}</td>
+                                <td>{availability.startTime} - {availability.endTime}</td>
+                                <td>
+                                    <button onClick={() => handleDeleteAvailability(availability.id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                ) : (
+                    <p>No tutor availabilities found.</p>
+                )}
+            </div>
+        </div>
+    );
 };
+
+export default AdminDashboard;

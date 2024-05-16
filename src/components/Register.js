@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import './form.css';
+import {useState} from "react";
 
 const Register = () => {
     const [formData, setFormData] = useState({
-        studentNumber: '',
+        username: '',
         password: '',
         role: 'STUDENT' // Set default role to STUDENT
     });
@@ -30,17 +30,17 @@ const Register = () => {
 
     return (
         <div>
-            <h2 className='title'>LearnX Platform</h2>
+            <h2 className='title'>Learning Platform</h2>
             <div className="form-container">
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <input
                             type="text"
-                            name="studentNumber"
-                            value={formData.studentNumber}
+                            name="username"
+                            value={formData.username}
                             onChange={handleChange}
-                            placeholder="Student Number"
+                            placeholder="Username"
                             required
                         />
                     </div>

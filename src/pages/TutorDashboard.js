@@ -184,7 +184,7 @@ const TutorDashboard = () => {
                                     <p>Subject: {request.subject}</p>
                                     <p>Day of the Week: {request.dayOfWeek}</p>
                                     <p>Time: {request.startTime} - {request.endTime}</p>
-                                    <p>Student: {request.student.studentNumber}</p>
+                                    <p>Student: {request.student.username}</p>
                                     <div className="response-buttons">
                                         {request.status === 'YES' && (
                                             <button onClick={() => handleResponse(request.id, 'ALT')}>ALT</button>
@@ -214,7 +214,7 @@ const TutorDashboard = () => {
                                     <p>Subject: {tutorial.subject}</p>
                                     <p>Day of the Week: {tutorial.dayOfWeek}</p>
                                     <p>Time: {tutorial.startTime} - {tutorial.endTime}</p>
-                                    <p>Student: {tutorial.student.studentNumber}</p>
+                                    <p>Student: {tutorial.student.username}</p>
                                 </div>
                             </div>
                         ))}

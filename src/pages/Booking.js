@@ -164,7 +164,7 @@ const Booking = () => {
                                 <option value="">-- Select Availability --</option>
                                 {filteredAvailabilities.map((availability) => (
                                     <option key={availability.id} value={availability.id}>
-                                        {availability.tutor.studentNumber} - {availability.startTime} to {availability.endTime}
+                                        {availability.tutor.username} - {availability.startTime} to {availability.endTime}
                                     </option>
                                 ))}
                             </select>
@@ -206,7 +206,7 @@ const Booking = () => {
                                     <p>Subject: {request.subject}</p>
                                     <p>Day of the Week: {request.dayOfWeek}</p>
                                     <p>Time: {request.startTime} - {request.endTime}</p>
-                                    <p>Tutor: {request.tutor.studentNumber}</p>
+                                    <p>Tutor: {request.tutor.username}</p>
                                 </div>
                             </div>
                         ))}
@@ -222,7 +222,7 @@ const Booking = () => {
                                     <p>Subject: {tutorial.subject}</p>
                                     <p>Day of the Week: {tutorial.dayOfWeek}</p>
                                     <p>Time: {tutorial.startTime} - {tutorial.endTime}</p>
-                                    <p>Tutor: {tutorial.tutor.studentNumber}</p>
+                                    <p>Tutor: {tutorial.tutor.username}</p>
                                 </div>
                             </div>
                         ))}

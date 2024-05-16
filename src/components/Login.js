@@ -5,7 +5,7 @@ import './form.css';
 
 const Login = () => {
     const [formData, setFormData] = useState({
-        studentNumber: '',
+        username: '',
         password: ''
     });
     const [loginSuccess, setLoginSuccess] = useState(false);
@@ -41,17 +41,17 @@ const Login = () => {
 
     return (
         <div>
-            <h2 className='title'>LearnX Platform</h2>
+            <h2 className='title'>Learning Platform</h2>
             <div className="form-container">
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <input
                             type="text"
-                            name="studentNumber"
-                            value={formData.studentNumber}
+                            name="username"
+                            value={formData.username}
                             onChange={handleChange}
-                            placeholder="Student Number"
+                            placeholder="Username"
                             required
                         />
                     </div>
