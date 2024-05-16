@@ -57,7 +57,7 @@ const Booking = () => {
     };
 
     const handleFeedbackChange = (e) => {
-        setFeedbackFormData({ ...feedbackFormData, [e.target.name]: e.target.value });
+        setFeedbackFormData({...feedbackFormData, [e.target.name]: e.target.value});
     };
 
     const handleSubmit = async (e) => {
@@ -115,6 +115,33 @@ const Booking = () => {
             console.error('Error submitting feedback:', error);
         }
     };
+
+    return (
+        <div className="booking-container">
+            <h2>Student Booking Page</h2>
+            <div className="booking-grid">
+                {/* Tutorial Booking Form */}
+                <div className="booking-form">
+                    <h3>Book a Tutorial</h3>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label>Select Day of the Week: </label>
+                            <select name="selectedDate" value={formData.selectedDate}onChange={handleChange} required>
+                                <option value="">-- Select Day --</option>
+                                <option value="MONDAY">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                            </select>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    )
+
+
 
 
 
