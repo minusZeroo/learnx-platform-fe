@@ -130,6 +130,25 @@ const Booking = () => {
                                 <option value="">-- Select Day --</option>
                                 <option value="MONDAY">Monday</option>
                                 <option value="Tuesday">Tuesday</option>
+                                <option value="WEDNESDAY">Wednesday</option>
+                                <option value="THURSDAY">Thursday</option>
+                                <option value="FRIDAY">Friday</option>
+                                <option value="SATURDAY">SATURDAY</option>
+                                <option value="SUNDAY">SUNDAY</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Select Subject: </label>
+                            <select>
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
+                                required
+                                >
+                                <option value="">-- Select Subject--</option>
+                                <option value="MATHS">Maths</option>
+                                <option value="PHYSICS">PHYSICS</option>
+                                <option value="CHEMISTRY">CHEMISTRY</option>
                             </select>
                         </div>
                     </form>
