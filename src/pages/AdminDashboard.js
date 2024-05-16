@@ -27,11 +27,25 @@ const AdminDashboard = () => {
     };
 
     const fetchTutorialBookings = async () => {
-
-    }
+        try {
+            const response = await axios.get('http://localhost:8080/api/tutorial-bookings');
+            setTutorialBookings(response.data);
+            setLoading(false);
+        } catch (error) {
+            setError('Error fetching tutorial bookings.');
+            setLoading(false);
+        }
+    };
 
     const fetchTutorAvailabilities = async () => {
-
-    }
+        try {
+            const response = await axios.get('http://localhost:8080/api/tutor-availabilities');
+            setTutorAvailabilities(response.data);
+            setLoading(false);
+        } catch (error) {
+            setError('Error fetching tutor availabilities.');
+            setLoading(false);
+        }
+    };
 
 };
