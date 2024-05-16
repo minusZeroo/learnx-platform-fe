@@ -48,4 +48,59 @@ const AdminDashboard = () => {
         }
     };
 
+    const handleDeleteRequest = async (requestId) => {
+        try {
+            await axios.delete(`http://localhost:8080/api/tutorial-requests/${requestId}`);
+            // After deletion, fetch the updated list of tutorial requests
+            fetchAltTutorialRequests();
+        } catch (error) {
+            console.error('Error deleting tutorial request:', error);
+        }
+    };
+
+    const handleDeleteBooking = async (requestId) => {
+        try {
+            await axios.delete(`http://localhost:8080/api/tutorial-bookings/${requestId}`);
+            // After deletion, fetch the updated list of tutorial bookings
+            fetchTutorialBookings();
+        } catch (error) {
+            console.error('Error deleting tutorial booking:', error);
+        }
+    };
+
+    const handleDeleteAvailability = async (availabilityId) => {
+        try {
+            await axios.delete(`http://localhost:8080/api/tutor-availabilities/${availabilityId}`);
+            // After deletion, fetch the updated list of tutor availabilities
+            fetchTutorAvailabilities();
+        } catch (error) {
+            console.error('Error deleting tutor availability:', error);
+        }
+    };
+
+    const handleResponseStatus = async (requestId, status) => {
+        try {
+            await axios.put(`http://localhost:8080/api/tutorial-requests/${requestId}/status?status=${status}`);
+            if (status === 'YES') {
+                // Create a booking similar to the Tutor Dashboard
+                const selectedRequest = altTutorialRequests.find((request) => request.id === requestId);
+                const bookingData = {
+                    dayOfWeek: selectedRequest.dayOfWeek,
+                    startTime: selectedRequest.startTime,
+                    endTime: selectedRequest.endTime,
+                    subject: selectedRequest.subject,
+                    studentId: selectedRequest.student.id,
+                    tutorId: selectedRequest.tutor.id
+                };
+                await axios.post('http://localhost:8080/api/tutorial-bookings', bookingData);
+            }
+            // After updating status or creating a booking, fetch the updated list of tutorial requests
+            fetchAltTutorialRequests();
+        } catch (error) {
+            console.error('Error updating tutorial request status:', error);
+        }
+    };
+
+
+
 };
