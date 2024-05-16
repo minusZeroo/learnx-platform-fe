@@ -33,3 +33,29 @@
 .booking-details {
     grid-column: 2 / 3;
 }
+
+.booking-container form div {
+    margin-bottom: 15px;
+}
+
+.booking-container label {
+    display: block;
+}
+
+.booking-container select,
+.booking-container button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.booking-container button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+
